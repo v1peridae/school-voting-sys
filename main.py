@@ -20,25 +20,23 @@ else:
 print(cand_list)
 print(cand_num_list)
 
-for i in range(1,4):
+for i in range(1,5):
   votes = int(input(f"Enter a number between 1 and {cand_num} to vote for your participant >>>"))
 
   if votes == 1:
     cand_1 +=1
-
   elif votes == 2:
     cand_2 +=1
-
-  elif votes == 4:
+  elif votes == 3:
     cand_3 +=1
-
   elif votes == 4:
     cand_4 +=1
-
   else:
     print("Invalid candidate number")
 
-print(cand_list[0]," has ",cand_1," votes.")
-print(cand_list[1]," has ",cand_2," votes.")
-print(cand_list[2]," has ",cand_3," votes.")
-print(cand_list[3]," has ",cand_4," votes.")
+if cand_1 in (cand_2, cand_3, cand_4) or cand_2 in (cand_3, cand_4):
+  print("No overall winner.")
+
+else:
+  cand_num_list.sort()
+  print(cand_num_list)
